@@ -1,0 +1,22 @@
+usecase-beta
+direction LR
+
+actor Usuario
+
+systemBoundary "Simulador bancario"
+    Consultar("Consultar cuentas")
+    Ingresar("Ingresar en cuenta")
+    Retirar("Retirar de cuenta")
+    Transferir("Transferir entre cuentas")
+    Validar("Validar saldo disponible")
+    Salir("Salir de la aplicación")
+end
+
+Usuario --> Consultar
+Usuario --> Ingresar
+Usuario --> Retirar
+Usuario --> Transferir
+Usuario --> Salir
+
+Retirar ..> : include Validar
+Transferir ..> : include Validar
