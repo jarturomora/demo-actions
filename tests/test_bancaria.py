@@ -4,6 +4,7 @@ Cada prueba sigue, de manera explícita o implícita, el patrón AAA:
 Arrange (preparar), Act (actuar) y Assert (comprobar).
 """
 
+
 from decimal import Decimal
 
 import pytest
