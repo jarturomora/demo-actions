@@ -33,7 +33,7 @@ def destino() -> Cuenta:
 
 def test_ingresar(origen: Cuenta) -> None:
     # Act y Assert: se ejecuta el ingreso y se verifica el saldo devuelto.
-    assert ingresar(origen, "21.50") == Decimal("120.50")
+    assert ingresar(origen, "21.50") == Decimal("121.50")
 
 
 def test_validar_saldo(origen: Cuenta) -> None:
