@@ -53,11 +53,20 @@ classDiagram
 
 ## Preparar el entorno virtual desde Git Bash
 
-Requiere Python 3.10 o posterior. Abre Git Bash en la raíz del proyecto y crea
-un entorno virtual llamado `pruebas_env`:
+El proyecto utiliza Python 3.12. Antes de crear el entorno, comprueba que esa
+versión está instalada en Windows:
 
 ```bash
-python -m venv pruebas_env
+py -3.12 --version
+```
+
+El resultado debe comenzar por `Python 3.12`. Un entorno virtual no instala una
+versión nueva de Python, sino que se crea a partir de una versión ya instalada.
+Abre Git Bash en la raíz del proyecto y crea `pruebas_env` explícitamente con
+Python 3.12:
+
+```bash
+py -3.12 -m venv pruebas_env
 ```
 
 Activa el entorno desde Git Bash:
@@ -67,12 +76,18 @@ source pruebas_env/Scripts/activate
 ```
 
 Cuando el entorno esté activo, su nombre aparecerá al principio de la línea de
-comandos como `(pruebas_env)`. Instala entonces las dependencias del proyecto:
+comandos como `(pruebas_env)`. Comprueba que utiliza el intérprete correcto e
+instala las dependencias del proyecto:
 
 ```bash
+python --version
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
+
+El comando `python --version` debe mostrar Python 3.12. Esto evita ejecutar la
+aplicación accidentalmente con otra instalación, como una versión antigua de
+Python incluida en Anaconda.
 
 Todos los comandos siguientes deben ejecutarse en esa misma terminal de Git
 Bash. Para salir del entorno virtual cuando termines, utiliza:
